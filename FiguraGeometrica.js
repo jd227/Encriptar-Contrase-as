@@ -105,16 +105,4 @@ class Circulo extends FiguraGeometrica {
     }
 }
 
-const rectangulo = new Rectangulo('Rectángulo', 'Rojo', 5, 3);
-console.log(rectangulo.obtenerNombre()); 
-console.log(rectangulo.obtenerColor()); 
-console.log(rectangulo.calcularArea()); 
-console.log(rectangulo.calcularPerimetro()); 
-
-const circulo = new Circulo('Círculo', 'Azul', 4);
-console.log(circulo.obtenerNombre()); 
-console.log(circulo.obtenerColor()); 
-console.log(circulo.calcularArea()); 
-console.log(circulo.calcularPerimetro()); 
-
 module.exports = { FiguraGeometrica, Rectangulo, Circulo };
