@@ -18,7 +18,11 @@ class Persona {
     }
 
     establecerEdad(edad) {
-        this.#edad = edad;
+        if (edad >= 0) {
+            this.#edad = edad;
+        } else {
+            throw new Error('La edad no puede ser negativa.');
+        }
     }
 
     obtenerEdad() {
