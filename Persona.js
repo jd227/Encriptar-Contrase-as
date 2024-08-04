@@ -10,7 +10,11 @@ class Persona {
     }
 
     establecerNombre(nombre) {
-        this.#nombre = nombre;
+        if (typeof nombre === 'string' && nombre.trim() !== '') {
+            this.#nombre = nombre;
+        } else {
+            throw new Error('El nombre debe ser una cadena no vacia.');
+        }
     }
 
     obtenerNombre() {
@@ -18,10 +22,10 @@ class Persona {
     }
 
     establecerEdad(edad) {
-        if (edad >= 0) {
+        if (Number.isInteger(edad) && edad >= 0) {
             this.#edad = edad;
         } else {
-            throw new Error('La edad no puede ser negativa.');
+            throw new Error('La edad debe ser un numero entero no negativo.');
         }
     }
 
@@ -30,7 +34,11 @@ class Persona {
     }
 
     establecerFechaNacimiento(fechaNacimiento) {
-        this.#fechaNacimiento = fechaNacimiento;
+        if (Date.parse(fechaNacimiento)) {
+            this.#fechaNacimiento = fechaNacimiento;
+        } else {
+            throw new Error('La fecha de nacimiento debe ser una fecha valida.');
+        }
     }
 
     obtenerFechaNacimiento() {
