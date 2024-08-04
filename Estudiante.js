@@ -8,6 +8,7 @@ class Estudiante extends Persona {
         this.#grado = grado;
     }
 
+    
  
 }
 
