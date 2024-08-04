@@ -1,9 +1,38 @@
-const Empleado = require('./Empleado');
-const Trabajador = require('./Trabajador');
+class Empleado {
+    #nombre;
+    #salario;
 
-class Empleado extends Trabajador {
+    constructor(nombre, salario) {
+        this.#nombre = nombre;
+        this.#salario = salario;
+    }
+
+    establecerNombre(nombre) {
+        this.#nombre = nombre;
+    }
+
+    obtenerNombre() {
+        return this.#nombre;
+    }
+
+    establecerSalario(salario) {
+        if (typeof salario === 'number' && salario >= 0) {
+            this.#salario = salario;
+        } else {
+            throw new Error('El salario debe ser un número no negativo.');
+        }
+    }
+
+    obtenerSalario() {
+        return this.#salario;
+    }
+
     realizarTarea() {
         console.log('Realizando tarea laboral.');
+    }
+
+    calcularSalario() {
+        return this.#salario;
     }
 }
 
@@ -36,8 +65,6 @@ class Gerente extends Empleado {
     }
 }
 
-const Empleado = require('./Empleado');
-
 class Vendedor extends Empleado {
     #comision;
 
@@ -67,6 +94,8 @@ class Vendedor extends Empleado {
     }
 }
 
-module.exports = Empleado;
-module.exports = Vendedor;
-module.exports = Gerente;
+module.exports = {
+    Empleado,
+    Gerente,
+    Vendedor
+};
