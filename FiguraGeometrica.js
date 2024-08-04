@@ -75,3 +75,32 @@ class Rectangulo extends FiguraGeometrica {
         return 2 * (this.#longitud + this.#ancho);
     }
 }
+
+class Circulo extends FiguraGeometrica {
+    #radio;
+
+    constructor(nombre, color, radio) {
+        super(nombre, color);
+        this.#radio = radio;
+    }
+
+    establecerRadio(radio) {
+        if (typeof radio === 'number' && radio > 0) {
+            this.#radio = radio;
+        } else {
+            throw new Error('El radio debe ser un número positivo.');
+        }
+    }
+
+    obtenerRadio() {
+        return this.#radio;
+    }
+
+    calcularArea() {
+        return Math.PI * Math.pow(this.#radio, 2);
+    }
+
+    calcularPerimetro() {
+        return 2 * Math.PI * this.#radio;
+    }
+}
