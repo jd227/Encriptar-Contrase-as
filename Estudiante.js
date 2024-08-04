@@ -19,6 +19,10 @@ class Estudiante extends Persona {
     obtenerGrado() {
         return this.#grado;
     }
+
+    toString() {
+        return `${super.toString()} - Grado: ${this.#grado}`;
+    }
 }
 
 module.exports = Estudiante;
