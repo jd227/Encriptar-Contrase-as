@@ -1,6 +1,5 @@
 // Estudiante.js
 const Persona = require('./Persona');
-const Trabajador = require('./Trabajador');
 
 class Estudiante extends Persona {
     #grado;
