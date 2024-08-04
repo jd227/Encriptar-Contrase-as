@@ -25,7 +25,7 @@ class Persona {
         if (Number.isInteger(edad) && edad >= 0) {
             this.#edad = edad;
         } else {
-            throw new Error('La edad debe ser un numero entero no negativo.');
+            throw new Error('La edad debe ser un número entero no negativo.');
         }
     }
 
@@ -43,6 +43,12 @@ class Persona {
 
     obtenerFechaNacimiento() {
         return this.#fechaNacimiento;
+    }
+
+    calcularFechaNacimiento() {
+        const hoy = new Date();
+        const fechaNacimiento = new Date(hoy.getFullYear() - this.#edad, hoy.getMonth(), hoy.getDate());
+        this.#fechaNacimiento = fechaNacimiento.toISOString().split('T')[0];
     }
 }
 
