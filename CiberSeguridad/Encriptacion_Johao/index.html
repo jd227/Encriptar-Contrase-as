@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptación de Contraseña</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #e0f7fa, #b2ebf2); /* Gradiente suave para el fondo */
+            /* background-image: url('https://www.redeszone.net/app/uploads-redeszone.net/2021/04/llave-digital.jpg?x=480&y=375&quality=40'); Imagen de fondo suave */
+            background-size: cover; /* Asegura que la imagen cubra toda el área */
+            background-position: center; /* Centra la imagen */
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con 80% de opacidad */
+            border-radius: 8px;
+            
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group input {
+            font-size: 1.1rem;
+        }
+        .btn-custom {
+            padding: 0.75rem 1.0rem;
+            
+        }
+        .btn-primary { background-color: #007bff; border-color: #007bff; }
+        .btn-secondary { background-color: #6c757d; border-color: #6c757d; }
+        .btn-success { background-color: #28a745; border-color: #28a745; }
+        .result {
+            margin-top: 20px;
+            
+        }
+        .result.alert {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+
+        }
+        .card {
+            margin-top: 20px;
+
+        }
+        .card-header {
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Encriptación de Contraseña</h1>
+        
+        <div class="card">
+            <div class="card-header">Ingrese la Contraseña</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="text" class="form-control" id="contraseña" placeholder="Ingrese la contraseña">
+                </div>
+                <button class="btn btn-primary btn-custom btn-block mb-3" onclick="encriptar()">Encriptar</button>
+                <button class="btn btn-secondary btn-custom btn-block mb-3" onclick="desencriptar()">Desencriptar</button>
+                
+                <div class="form-group">
+                    <label for="codigomodificado">Código Encriptado:</label>
+                    <input type="text" class="form-control" id="codigomodificado" placeholder="Código modificado">
+                </div>
+                
+                <button class="btn btn-success btn-custom btn-block mb-3" onclick="verificar()">Verificar</button>
+                
+                <div id="result" class="result alert" role="alert"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
