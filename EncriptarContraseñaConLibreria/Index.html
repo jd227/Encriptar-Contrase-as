@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Hash contraseñas</h1>
+    <div>
+        <input type="text" id="password" placeholder="Contraseña">
+        <button onclick="hashPassword()">Encriptar</button>
+        <input type="text" id="hashedPassword" placeholder="Encriptada" readonly>
+    </div>
+    <div>
+        <input type="text" id="hashInput" placeholder="Contraseña encriptada">
+        <button onclick="decryptPassword()">Desencriptar</button>
+        <input type="text" id="decryptedPassword" placeholder="Desencriptada" readonly>
+    </div>
+
+    <script src="Script.js">
+    </script>
+</body>
+</html>
